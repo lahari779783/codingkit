@@ -1,0 +1,314 @@
+/* ------------------ GLOBAL RESET & BASE ------------------ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  min-height: 100vh;
+  color: #e0e0e0;
+  padding: 20px;
+}
+
+body.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ------------------ NAVBAR STYLING ------------------ */
+.navbar {
+  background-color: #1e2a38 !important;
+  border-radius: 0 0 1rem 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.navbar-brand img {
+  border-radius: 50%;
+}
+
+.navbar .btn {
+  border-radius: 0.5rem;
+  margin-right: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.navbar .btn-outline-secondary {
+  color: #81ecec;
+  border-color: #81ecec;
+}
+
+.navbar .btn-outline-secondary:hover {
+  background-color: #81ecec;
+  color: #2d3436;
+}
+
+.navbar .btn-outline-success {
+  color: #55efc4;
+  border-color: #55efc4;
+}
+
+.navbar .btn-outline-success:hover {
+  background-color: #55efc4;
+  color: #2d3436;
+}
+
+.navbar .btn-outline-danger {
+  color: #ff7675;
+  border-color: #ff7675;
+}
+
+.navbar .btn-outline-danger:hover {
+  background-color: #ff7675;
+  color: #2d3436;
+}
+
+/* ------------------ CARD STYLES ------------------ */
+.card {
+  border: none;
+  border-radius: 1rem;
+  background-color: #2c3e50;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  animation: fadeInUp 0.6s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card-title {
+  font-weight: 600;
+  color: #81ecec;
+}
+
+/* ------------------ BUTTONS ------------------ */
+.btn {
+  border-radius: 0.6rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-primary,
+.btn-outline-primary {
+  background-color: #0984e3;
+  border-color: #0984e3;
+  color: white;
+}
+
+.btn-outline-primary:hover,
+.btn-primary:hover {
+  background-color: #74b9ff;
+  border-color: #74b9ff;
+}
+
+.btn-success {
+  background-color: #00cec9;
+  border-color: #00cec9;
+  color: #fff;
+}
+
+.btn-success:hover {
+  background-color: #00b894;
+  border-color: #00b894;
+}
+
+/* ------------------ INPUT FIELDS ------------------ */
+.input-group input {
+  padding: 0.75rem;
+  border-radius: 0.5rem 0 0 0.5rem;
+  border: 1px solid #555;
+  font-size: 1rem;
+  background-color: #1e272e;
+  color: #fff;
+}
+
+/* ------------------ YOUTUBE FRAME ------------------ */
+.ratio iframe {
+  border-radius: 0.75rem;
+}
+
+/* ------------------ CHATBOX ------------------ */
+.card .chatbox {
+  height: 100%;
+  background-color: #34495e;
+  border-radius: 0.5rem;
+  padding: 10px;
+  overflow-y: auto;
+  color: #dfe6e9;
+}
+
+/* ------------------ TIMESTAMP ------------------ */
+.timestamp-entry {
+  padding: 6px 12px;
+  margin: 4px 0;
+  background-color: #3d3d3d;
+  border-left: 4px solid #00cec9;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  color: #fff;
+}
+
+/* ------------------ SAVE BUTTONS ------------------ */
+.save-buttons .btn {
+  margin: 8px;
+}
+
+/* ------------------ SCROLLBAR ------------------ */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(129, 236, 236, 0.7);
+  border-radius: 3px;
+}
+
+/* ------------------ RESPONSIVE ------------------ */
+@media (max-width: 768px) {
+  .card-title {
+    font-size: 1rem;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+  }
+}
+
+/* ------------------ FORM CARD ------------------ */
+.form-container {
+  background-color: #2c3e50;
+  padding: 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  animation: fadeInUp 0.7s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Heading */
+.form-container h2 {
+  margin-bottom: 1.8rem;
+  font-size: 1.8rem;
+  color: #81ecec;
+}
+
+/* Input fields */
+.form-container input {
+  width: 100%;
+  padding: 0.9rem;
+  margin-bottom: 1rem;
+  border: 1px solid #444;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  background-color: #1e272e;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.form-container input:focus {
+  border-color: #00cec9;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 206, 201, 0.4);
+}
+
+/* Submit Button */
+.form-container button[type="submit"] {
+  width: 100%;
+  padding: 0.9rem;
+  background-color: #0984e3;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 0.5rem;
+}
+
+.form-container button[type="submit"]:hover {
+  background-color: #74b9ff;
+}
+
+/* Back Button */
+.form-container button[type="button"] {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #636e72;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-container button[type="button"]:hover {
+  background-color: #b2bec3;
+  color: #2d3436;
+}
+
+/* Text below form */
+.form-container p {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: #dfe6e9;
+}
+
+.form-container a {
+  color: #81ecec;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.form-container a:hover {
+  text-decoration: underline;
+}
+
+/* ----------- HISTORY CARD STYLE ----------- */
+.history-card {
+  background-color: #2d3436;
+  border-radius: 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  animation: slideIn 0.6s ease;
+  color: #dfe6e9;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.history-card h5,
+.history-card h6 {
+  margin-bottom: 0.5rem;
+}
+.btn-outline-warning {
+  color: #f1c40f;
+  border-color: #f1c40f;
+}
+
+.btn-outline-warning:hover {
+  background-color: #f1c40f;
+  color: #fff;
+}
+.navbar-brand img {
+  border-radius: 8px; /* optional rounded edges */
+}
