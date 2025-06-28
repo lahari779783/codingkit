@@ -5,11 +5,26 @@ from urllib.parse import urlparse, parse_qs
 app = Flask(__name__)
 app.secret_key = 'your-secret-key'  # Required for sessions
 
-# ✅ SQLite DB connection function
+import os
+import shutil
+import sqlite3
+
 def get_db_connection():
-    conn = sqlite3.connect('database.db')
+    is_render = os.environ.get("RENDER") == "true"
+    db_source_path = "database.db"
+    db_target_path = "/tmp/database.db" if is_render else "database.db"
+
+    # If deploying on Render and db not yet copied
+    if is_render and not os.path.exists(db_target_path):
+        if os.path.exists(db_source_path):
+            shutil.copy(db_source_path, db_target_path)
+        else:
+            raise FileNotFoundError("❌ 'database.db' not found in root directory!")
+
+    conn = sqlite3.connect(db_target_path)
     conn.row_factory = sqlite3.Row
     return conn
+
 
 # 🔁 Redirect home to login page
 @app.route('/')
